@@ -1,0 +1,145 @@
+<!-- ============================================HEADER============================================ -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light navabar-menu">
+    <div class="container-fluid header  ">
+        <div class="">
+            <img src="../../assets/gurukul logo.png" alt="" class="header-img">
+        </div>
+        <div class="mx-auto">
+            <a class="navbar-brand mx-auto " href="#">
+                <h2>Todo List</h2>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex ms-auto" style="font-size: 50px;">
+                <i class="bi bi-person-circle "></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- ============================================SLIDER ============================================ -->
+<div class="container-fluid ">
+
+    <!-- first slider -->
+    <div class="row bg" style="min-height: 89.3vh; ">
+        <div
+            class="col-xxl-2 d-xxl-block col-xl-2 d-xl-block col-lg-2 d-lg-block col-md-4 d-md-block d-sm-none d-none  text-white Tag-Background ">
+            <p><span class="tags-bar "><i class="bi bi-tags"></i></span>Tag</p>
+            <ul *ngFor="let i of allData ,let ii  = index " style="display: flex; ">
+                <li>{{ii+1}}.</li>&nbsp;&nbsp;
+                <li> {{i.tag_name}}</li>
+
+            </ul>
+        </div>
+
+
+        <!--second slider Mobile view -->
+        <div class="d-xxl-none d-xl-none d-lg-none d-md-none col-sm-12 d-sm-block d-block mt-2 smallSidebar">
+            <!-- SMALL DEVICE TAGS SIDEBAR PART  -->
+            <div class="tagsPart ">
+                <div class="m-2" *ngFor="let i of allData">
+                    <p class="">{{i.tag_name}}</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- thired slider -->
+        <div class="col-xxl-10 col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12 mainContainer heightCust">
+            <div class="row d-flex flex-column mt-4" (keyup.enter)="AddData()  ">
+                <div
+                    class="d-flex justify-content-xxl-center justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-center">
+                    <input type="text" class="form-control tagInput" name="tag" placeholder="Enter Tag"
+                        [(ngModel)]="task.tag_name">
+                    <input type="color" class="form-control colorInput fgC" [(ngModel)]="task.tag_fg_color">
+                    <input type="color" class="form-control colorInput bgC" [(ngModel)]="task.tag_bg_color">
+                </div>
+                <div
+                    class="d-flex justify-content-xxl-center justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-center">
+                    <input type="text" class="form-control taskInput" name="task" placeholder="Enter Task"
+                        [(ngModel)]="task.task_name ">
+                    <!-- <button type="button" class="btn btn-primary ms-2 plus"  (click)="AddData()"> -->
+                    <!-- <h1>+</h1></button> -->
+
+                </div>
+            </div>
+
+
+            <!-- ----------------------------------------search Task---------------------------------------- -->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary mx-auto">
+                <div class="d-flex mx-auto ">
+                    <div>
+                        <h3>Task</h3>
+                    </div>
+                    <div>
+                        <input class="form-control ms-3 search-box " type="search" placeholder="Search"
+                            aria-label="Search">
+                    </div>
+                    <div class="form-check form-switch ms-3 toggale-complete">
+                        <input class="form-check-input" type="checkbox" (change)="changeTaskReload($event)"
+                            id="flexSwitchCheckDefault">
+                    </div>
+                </div>
+            </nav>
+            <hr>
+
+
+
+            <!-- ----------------------------------------Task Card Start----------------------------- -->
+            <div class="row ">
+                <div class="col d-flex flex-column justify-content-center align-items-center ">
+
+                    <div class="row ">
+                        <div class="col ">
+                            <ng-container *ngFor="let i of allData ,let ii  = index">
+                                <div *ngIf="!btnDone && !i.completed" class="card mt-5 Card-Task">
+                                    <div class="form-check checkbox d-flex justify-content-between">
+                                        <div>
+                                            <input class="form-check-input mx-auto "
+                                                (change)="convertDoneOnUnDone($event,i)" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <h6 class="card-header">TASK-{{ii+1}}</h6>
+                                        </div>
+                                        <div class="Tag" [style.background-color]="i.tag_bg_color"><span
+                                                [style.color]="i.tag_fg_color">{{i.tag_name}} </span></div>
+                                        <div>
+                                            <i class="bi bi-pencil-square Edit" (click)="fillData(i)"></i>
+                                            <i class="bi bi-trash3-fill Delete" (click)="DeleteData(i)"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">{{i.task_name}}</p>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-container *ngFor="let i of allData ,let ii  = index">
+                                <div *ngIf="btnDone && i.completed" class="card mt-5 Card-Task">
+                                    <div class="form-check checkbox d-flex justify-content-between">
+                                        <div>
+                                            <input class="form-check-input mx-auto "
+                                                (change)="convertDoneOnUnDone($event,i)" checked type="checkbox"
+                                                value="" id="flexCheckDefault">
+                                            <h6 class="card-header">TASK-{{ii+1}}</h6>
+                                        </div>
+                                        <div class="Tag" [style.background-color]="i.tag_bg_color"><span
+                                                [style.color]="i.tag_fg_color">{{i.tag_name}} </span></div>
+                                        <div>
+                                            <i class="bi bi-pencil-square Edit" (click)="fillData(i)"></i>
+                                            <i class="bi bi-trash3-fill Delete" (click)="DeleteData(i)"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">{{i.task_name}}</p>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ---------------------------------Task Card End----------------------------------- -->
+        </div>
+    </div>
+</div>

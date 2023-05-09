@@ -1,1 +1,372 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Jura:wght@300&family=Nanum+Gothic&family=Quicksand&family=Source+Sans+Pro:wght@300&display=swap');
+
+// =======================================================UI TODOS CSS=============================================================//
+
+//===================HEADER HTML CODE===================//
+.navabar-menu {
+    padding: 0%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: #50c2e2;
+    padding: 5px;
+}
+
+.header-img {
+    height: 7vh;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.navabars {
+    flex-grow: 0;
+}
+
+
+
+//===================LAPTOP VIEW SLIDER BAR (FIRST)===================//
+
+.Tag-Background {
+    background: #52b8d5;
+}
+
+.Tag-Background p {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+    color: #000000;
+}
+
+.Tag-Background li {
+    color: #000000;
+    list-style: none;
+    text-align: center;
+}
+
+.tags-bar {
+    font-size: 22px;
+    color: #a85858;
+}
+
+//===================MOBILE VIEW SLIDER BAR (SECOND)===================//
+
+.smallSidebar {
+    .tagsPart {
+        display: flex;
+        overflow-x: auto;
+        background-color: #69a0af;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
+        div p {
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            margin: auto;
+            padding: 3px 14px;
+            border: 1px solid #296e81;
+            border-radius: 10px;
+            font-family: 'IBM Plex Serif', serif;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+//===================LAPTOP VIEW SLIDER BAR (THIRED)===================//
+//========ENTER TAG & ENTER TASK NAME========//
+.mainContainer {
+    .tagInput {
+        width: 20%;
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-family: 'Jura', sans-serif;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-family: 'Quicksand', sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
+        border-style: none;
+        border-bottom: 2px solid rgb(230, 164, 164);
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    }
+
+    .colorInput {
+        width: 3%;
+    }
+
+    .taskInput {
+        width: 35vw;
+        font-size: 25px;
+        margin-bottom: 20px;
+        border-style: none;
+        border-bottom: 2px solid rgb(230, 164, 164);
+        font-family: 'Josefin Sans', sans-serif;
+        font-family: 'Jura', sans-serif;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-family: 'Quicksand', sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+}
+
+//========SEARCH TASK & COMPLETE TASK BUTTON ========//
+.search-box {
+    width: 15vw;
+    border-style: none;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Jura', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.toggale-complete {
+    font-size: 22px;
+}
+
+//========TASK CARD DESIGN========//
+.Card-Task {
+    background-color: #f1efef;
+    width: 40vw;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.checkbox {
+    font-size: 16px;
+    background-color: #69a0af;
+    border-radius: 4px;
+}
+
+.checkbox input {
+    margin-top: 10px;
+}
+
+
+.checkbox h6 {
+    background-color: rgba(224, 218, 218, 0.11);
+    border-style: none;
+    margin: 2px 0;
+    font-size: 14px;
+    color: rgb(66, 66, 66);
+}
+
+.checkbox .Tag {
+    text-align: center;
+    border-radius: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 2px 10px;
+    margin-top: 8px;
+}
+
+.Card-Task i {
+    padding: 10px;
+}
+
+.Card-Task .Edit {
+    color: rgba(255, 255, 255, 0.836);
+    font-size: 22px;
+}
+
+.Card-Task .Edit:hover {
+    color: rgba(0, 255, 0, 0.836);
+}
+
+.Card-Task .Delete {
+    color: rgb(255, 0, 0);
+    font-size: 25px;
+
+}
+
+.Card-Task .Delete:hover {
+    color: rgb(231, 137, 137);
+}
+
+.Tag {
+    background-color: black;
+
+    span {
+        color: #e2e0e0;
+    }
+}
+
+
+// #####################################################   MEDIA QUARY  ##########################################################
+
+//---------------1400
+
+@media screen and (max-width: 1400px) {
+
+    .tagInput {
+        width: 25vw !important;
+    }
+
+    .colorInput {
+        height: 30px;
+        width: 4vw !important;
+    }
+
+    .taskInput {
+        width: 60vw !important;
+    }
+
+    .search-box {
+        width: 23vw !important;
+    }
+}
+
+//---------------1250
+@media screen and (max-width: 1250px) {
+
+    .tagInput {
+        width: 25vw !important;
+    }
+
+    .colorInput {
+        height: 30px;
+        width: 4vw !important;
+    }
+
+    .taskInput {
+        width: 60vw !important;
+    }
+
+    .search-box {
+        width: 23vw !important;
+    }
+}
+
+//---------------1024
+@media screen and (max-width: 1024px) {
+
+    .tagInput {
+        width: 25vw !important;
+    }
+
+    .colorInput {
+        height: 30px;
+        width: 4vw !important;
+    }
+
+    .taskInput {
+        width: 60vw !important;
+    }
+
+    .search-box {
+        width: 22vw !important;
+    }
+
+    .Card-Task {
+        width: auto;
+        height: auto;
+    }
+}
+
+//---------------768
+@media screen and (max-width: 768px) {
+
+    .tagInput {
+        width: 30vw !important;
+    }
+
+    .colorInput {
+        height: 30px;
+        width: 6vw !important;
+    }
+
+    .taskInput {
+        width: 60vw !important;
+    }
+
+    .search-box {
+        width: 25vw !important;
+    }
+
+    .Card-Task {
+        width: auto;
+        height: auto;
+    }
+
+    .mainContainer .taskInput {
+        min-width: 0 !important;
+        width: 80vw !important;
+
+    }
+}
+
+//---------------450
+@media screen and (max-width: 450px) {
+
+    .tagInput {
+        width: 50vw !important;
+    }
+
+    .colorInput {
+        height: 30px;
+        width: 10vw !important;
+    }
+
+    .taskInput {
+        width: 50vw !important;
+    }
+
+    .search-box {
+        width: 45vw !important;
+    }
+
+    .Card-Task {
+        width: auto;
+        height: auto;
+    }
+
+    .mainContainer .taskInput {
+        min-width: 0 !important;
+        width: 94vw !important;
+
+    }
+}
+
+//---------------350
+@media screen and (max-width: 350px) {
+    .header img {
+        width: 90px;
+        height: 40px;
+    }
+
+    .tagInput {
+        width: 50vw !important;
+    }
+
+    .colorInput {
+        height: 30px;
+        width: 14vw !important;
+    }
+
+    .mainContainer .taskInput {
+        min-width: 0 !important;
+        width: 93vw !important;
+
+    }
+
+    .search-box {
+        width: 40vw !important;
+    }
+
+    .Card-Task {
+        height: auto;
+        width: auto;
+    }
+}
