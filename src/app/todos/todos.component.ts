@@ -21,42 +21,6 @@ export class TODOSComponent implements OnInit{
   }
 
 
-  changeTaskReload(event:any){
-    if(event.target.checked){
-      this.btnDone=true;
-    }
-    else{
-      this.btnDone=false;
-    }
-  }
-
-  convertDoneOnUnDone(event:any,i:any){
-    if(event.target.checked){
-      this.btnDone = true;  
-      this.Data.updateTaskUnDoneData(i).subscribe({
-        next: (res) => {
-            this.btnDone = false;  
-            this.GetData();
-          },
-          error:(err)=>{
-            console.log(err);
-          }
-        });
-      }
-      else{
-        this.btnDone = false;
-        this.Data.updateTaskDoneData(i).subscribe({
-          next: (res) => {
-            this.btnDone = true;
-            this.GetData();
-          },
-          error:(err)=>{
-            console.log(err);
-          }
-        });
-    }
-}
-
 
 // =============================ADD DATA METHOD=============================//
   AddData(){
@@ -129,9 +93,45 @@ DeleteData(Data:TodosPermision){
     }
   })
 }
+
+
+// =============================COMPLETE DATA METHOD START=============================//
+changeTaskReload(event:any){
+  if(event.target.checked){
+    this.btnDone=true;
   }
+  else{
+    this.btnDone=false;
+  }
+}
+
+convertDoneOnUnDone(event:any,i:any){
+  if(event.target.checked){
+    this.btnDone = true;  
+    this.Data.updateTaskUnDoneData(i).subscribe({
+      next: (res) => {
+          this.btnDone = false;  
+          this.GetData();
+        },
+        error:(err)=>{
+          console.log(err);
+        }
+      });
+    }
+    else{
+      this.btnDone = false;
+      this.Data.updateTaskDoneData(i).subscribe({
+        next: (res) => {
+          this.btnDone = true;
+          this.GetData();
+        },
+        error:(err)=>{
+          console.log(err);
+        }
+      });
+  }
+}
+// =============================COMPLETE DATA METHOD END=============================//
 
 
-  
-
-
+}

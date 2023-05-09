@@ -17,10 +17,10 @@
     </div>
 </nav>
 
-<!-- ============================================SLIDER ============================================ -->
+<!-- ============================================ THREE SLIDER============================================ -->
 <div class="container-fluid ">
 
-    <!-- first slider -->
+    <!-- ===================FIRST SLIDER LAPTOP VIEW=================== -->
     <div class="row bg" style="min-height: 89.3vh; ">
         <div
             class="col-xxl-2 d-xxl-block col-xl-2 d-xl-block col-lg-2 d-lg-block col-md-4 d-md-block d-sm-none d-none  text-white Tag-Background ">
@@ -32,10 +32,8 @@
             </ul>
         </div>
 
-
-        <!--second slider Mobile view -->
+        <!-- ===================SECOND SLIDER  MOBILE VIEW=================== -->
         <div class="d-xxl-none d-xl-none d-lg-none d-md-none col-sm-12 d-sm-block d-block mt-2 smallSidebar">
-            <!-- SMALL DEVICE TAGS SIDEBAR PART  -->
             <div class="tagsPart ">
                 <div class="m-2" *ngFor="let i of allData">
                     <p class="">{{i.tag_name}}</p>
@@ -43,9 +41,7 @@
             </div>
         </div>
 
-
-
-        <!-- thired slider -->
+        <!-- ===================THIRED SLIDER LAPTOP VIEW=================== -->
         <div class="col-xxl-10 col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12 mainContainer heightCust">
             <div class="row d-flex flex-column mt-4" (keyup.enter)="AddData()  ">
                 <div
@@ -59,14 +55,10 @@
                     class="d-flex justify-content-xxl-center justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-center">
                     <input type="text" class="form-control taskInput" name="task" placeholder="Enter Task"
                         [(ngModel)]="task.task_name ">
-                    <!-- <button type="button" class="btn btn-primary ms-2 plus"  (click)="AddData()"> -->
-                    <!-- <h1>+</h1></button> -->
-
                 </div>
             </div>
 
-
-            <!-- ----------------------------------------search Task---------------------------------------- -->
+            <!-- ============================================ SEARCH TASK & COMPLETE TOGGALE BUTTON============================================ -->
             <nav class="navbar navbar-expand-lg bg-body-tertiary mx-auto">
                 <div class="d-flex mx-auto ">
                     <div>
@@ -84,9 +76,7 @@
             </nav>
             <hr>
 
-
-
-            <!-- ----------------------------------------Task Card Start----------------------------- -->
+            <!-- ============================================ TASK CARD DESIGN START ============================================ -->
             <div class="row ">
                 <div class="col d-flex flex-column justify-content-center align-items-center ">
 
@@ -139,7 +129,7 @@
 
                 </div>
             </div>
-            <!-- ---------------------------------Task Card End----------------------------------- -->
+            <!-- ============================================ TASK CARD DESIGN START ============================================ -->
         </div>
     </div>
 </div>
