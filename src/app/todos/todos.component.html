@@ -46,7 +46,7 @@
             <div class="row d-flex flex-column mt-4" (keyup.enter)="updateAddBtn === false ? AddData() : EditData()">
                 <div
                     class="d-flex justify-content-xxl-center justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-center">
-                    <input type="text" class="form-control text-lowercase tagInput" name="tag" placeholder="Enter Tag"
+                    <input type="text" class="form-control text-capitallize  tagInput" name="tag" placeholder="Enter Tag"
                         [(ngModel)]="task.tag_name">
                     <input type="color" sd class="form-control colorInput fgC" [(ngModel)]="task.tag_fg_color">
                     <input type="color"   class="form-control colorInput bgC" [(ngModel)]="task.tag_bg_color">
@@ -89,7 +89,7 @@
                                             <input class="form-check-input mx-auto "
                                                 (change)="convertDoneOnUnDone($event,i)" type="checkbox" value=""
                                                 id="flexCheckDefault">
-                                            <h6 class="card-header">TASK-{{ii+1}}</h6>
+                                            <h6 class="card-header">Task-{{ii+1}}</h6>
                                         </div>
                                         <div class="Tag" [style.background-color]="i.tag_bg_color"><span
                                                 [style.color]="i.tag_fg_color">{{i.tag_name}} </span></div>
