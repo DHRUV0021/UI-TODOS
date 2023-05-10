@@ -13,7 +13,7 @@ dbUrl = 'http://localhost:3000/todosData';//JSON URL
 
 // ============GET DATA METHOD
 getTask(){
-  return this.http.get(this.dbUrl);
+  return this.http.get<Array<TodosPermision>>(this.dbUrl);
 }
 
 // ============ADD DATA METHOD

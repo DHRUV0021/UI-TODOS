@@ -25,9 +25,9 @@
         <div
             class="col-xxl-2 d-xxl-block col-xl-2 d-xl-block col-lg-2 d-lg-block col-md-4 d-md-block d-sm-none d-none  text-white Tag-Background ">
             <p><span class="tags-bar "><i class="bi bi-tags"></i></span>Tag</p>
-            <ul *ngFor="let i of allData ,let ii  = index " style="display: flex; ">
-                <li>{{ii+1}}.</li>&nbsp;&nbsp;
-                <li> {{i.tag_name}}</li>
+            <ul *ngFor="let i of removeDuplicatesArrayByName ,let ii  = index " style="display: flex; ">
+                <li >{{ii+1}}.</li>&nbsp;&nbsp;
+                <li (click)="tagSearchData(i)"> {{ i}}</li>
 
             </ul>
         </div>
@@ -35,8 +35,8 @@
         <!-- ===================SECOND SLIDER  MOBILE VIEW=================== -->
         <div class="d-xxl-none d-xl-none d-lg-none d-md-none col-sm-12 d-sm-block d-block mt-2 smallSidebar">
             <div class="tagsPart ">
-                <div class="m-2" *ngFor="let i of allData">
-                    <p class="">{{i.tag_name}}</p>
+                <div class="m-2" *ngFor="let i of removeDuplicatesArrayByName">
+                    <p class="">{{i}}</p>
                 </div>
             </div>
         </div>
@@ -48,8 +48,8 @@
                     class="d-flex justify-content-xxl-center justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-center">
                     <input type="text" class="form-control tagInput" name="tag" placeholder="Enter Tag"
                         [(ngModel)]="task.tag_name">
-                    <input type="color" class="form-control colorInput fgC" [(ngModel)]="task.tag_fg_color">
-                    <input type="color" class="form-control colorInput bgC" [(ngModel)]="task.tag_bg_color">
+                    <input type="color" sd class="form-control colorInput fgC" [(ngModel)]="task.tag_fg_color">
+                    <input type="color"   class="form-control colorInput bgC" [(ngModel)]="task.tag_bg_color">
                 </div>
                 <div
                     class="d-flex justify-content-xxl-center justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-center">
@@ -65,7 +65,7 @@
                         <h3>Task</h3>
                     </div>
                     <div>
-                        <input class="form-control ms-3 search-box " type="search" placeholder="Search"
+                        <input class="form-control ms-3 search-box " (keyup)="typingSearchData()" [(ngModel)]="searchValue" type="search" placeholder="Search"
                             aria-label="Search">
                     </div>
                     <div class="form-check form-switch ms-3 toggale-complete">
