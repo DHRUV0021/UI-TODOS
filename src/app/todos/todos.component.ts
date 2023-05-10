@@ -14,9 +14,7 @@ export class TODOSComponent implements OnInit {
   updateAddBtn= false;
   searchValue: string;
   allTags = new Array();
-  // removeDuplicatesArrayByName: Array<any>= [];
   removeDuplicatesArrayByName = new Array();
-  // removeDuplicatesArrayByName:any = new Array();
 
 
   constructor(private Data: CrudServiceService, private toastr: ToastrService) { }
