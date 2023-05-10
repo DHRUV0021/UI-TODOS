@@ -178,7 +178,6 @@ export class TODOSComponent implements OnInit {
       this.btnDone = false;
     }
   }
-
   convertDoneOnUnDone(event: any, i: any) {
     if (event.target.checked) {
       this.btnDone = true;
