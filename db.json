@@ -3,7 +3,7 @@
     {
       "completed": false,
       "tag_name": "work",
-      "task_name": "bootstraped",
+      "task_name": "Bootstraped",
       "id": 2
     },
     {
@@ -11,7 +11,7 @@
       "tag_name": "parsonal",
       "tag_fg_color": "#000000",
       "tag_bg_color": "#e6b7b7",
-      "task_name": "password",
+      "task_name": "Password",
       "id": 3
     },
     {
@@ -25,13 +25,13 @@
       "tag_name": "food",
       "tag_fg_color": "#000000",
       "tag_bg_color": "#aee0bb",
-      "task_name": "break fast",
+      "task_name": "Break fast",
       "id": 5
     },
     {
       "completed": false,
       "tag_name": "work",
-      "task_name": "aaa",
+      "task_name": "search web Design",
       "id": 6
     }
   ]
