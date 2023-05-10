@@ -11,7 +11,8 @@ export class TODOSComponent implements OnInit {
   task!: TodosPermision
   allData: Array<TodosPermision> = new Array<TodosPermision>();
   btnDone = false;
-  searchValue :string;
+  updateAddBtn= false;
+  searchValue: string;
   allTags = new Array();
   // removeDuplicatesArrayByName: Array<any>= [];
   removeDuplicatesArrayByName = new Array();
@@ -60,14 +61,7 @@ export class TODOSComponent implements OnInit {
     })
   }
 
-
-  // removeDuplicates(myArray:TodosPermision, Prop:string) {
-  //   return myArray.filter((obj, pos, arr) => {
-  //     return arr.map((mapObj:any) => mapObj[Prop]).indexOf(obj[Prop]) === pos;
-  //   });
-  // }
-
-
+  // ====================== REMOVE DUPLICATE TAGS MATHOD(FIRST)
   removeDuplicates(arr: any) {
     let s = []
     for (let i of arr) {
@@ -92,15 +86,10 @@ export class TODOSComponent implements OnInit {
     });
   }
 
+  // ======================SEARCH DATA TAG THROUGH METHOD
 
 
-
-
-
-  // search data
-
-
-  tagSearchData(data){
+  tagSearchData(data) {
     if (data) {
       let searchEmployee = new Array<TodosPermision>();
       if (this.allData.length > 0) {
@@ -109,9 +98,9 @@ export class TODOSComponent implements OnInit {
             searchEmployee.push(emp);
           }
         }
-        this.allData= searchEmployee;
+        this.allData = searchEmployee;
       }
-      else{
+      else {
         this.GetData();
       }
     }
@@ -120,7 +109,8 @@ export class TODOSComponent implements OnInit {
     }
   }
 
-  typingSearchData(){
+  // ======================TYPING DATA TAG THROUGH METHOD
+  typingSearchData() {
     if (this.searchValue) {
       let searchEmployee = new Array<TodosPermision>();
       if (this.allData.length > 0) {
@@ -129,9 +119,9 @@ export class TODOSComponent implements OnInit {
             searchEmployee.push(emp);
           }
         }
-        this.allData= searchEmployee;
+        this.allData = searchEmployee;
       }
-      else{
+      else {
         this.GetData();
       }
     }
@@ -145,12 +135,14 @@ export class TODOSComponent implements OnInit {
 
   fillData(Data: TodosPermision) {
     this.task = Data;
+    this.updateAddBtn= true;
   }
-  EditData(Data: TodosPermision) {
-    this.Data.editTask(Data).subscribe({
+  EditData() {
+    this.Data.editTask(this.task).subscribe({
       next: (res) => {
         this.task = new TodosPermision;
-
+        // this.GetData();
+        this.updateAddBtn= false;
         console.log(res);
       },
       error: (err) => {
@@ -216,6 +208,4 @@ export class TODOSComponent implements OnInit {
     }
   }
   // =============================COMPLETE DATA METHOD END=============================//
-
-
 }

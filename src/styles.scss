@@ -12,7 +12,8 @@
 .header {
     display: flex;
     justify-content: center;
-    background-color: #50c2e2;
+    // background-color: #50c2e2;
+    background: #52b9d59f;
     padding: 5px;
 }
 
@@ -32,7 +33,7 @@
 //===================LAPTOP VIEW SLIDER BAR (FIRST)===================//
 
 .Tag-Background {
-    background: #52b8d5;
+    background: #52b9d569;
 }
 
 .Tag-Background p {
@@ -59,13 +60,13 @@
     .tagsPart {
         display: flex;
         overflow-x: auto;
-        background-color: #69a0af;
+        background: #52b9d56b;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
         div p {
             font-size: 16px;
-            color: #fff;
+            color: #000000;
             text-align: center;
             margin: auto;
             padding: 3px 14px;
@@ -135,14 +136,13 @@
     background-color: #f1efef;
     width: 40vw;
     height: auto;
-    padding: 10px;
     border-radius: 5px;
     border-style: none;
 }
 
 .checkbox {
     font-size: 16px;
-    background-color: #69a0af;
+    background: #52b9d54b;
     border-radius: 4px;
 }
 
@@ -177,7 +177,7 @@
 }
 
 .Card-Task .Edit {
-    color: rgba(255, 255, 255, 0.836);
+    color: rgba(5, 56, 9, 0.993);
     font-size: 22px;
 }
 

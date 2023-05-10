@@ -9,11 +9,11 @@
                 <h2>Todo List</h2>
             </a>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="d-flex ms-auto" style="font-size: 50px;">
                 <i class="bi bi-person-circle "></i>
             </form>
-        </div>
+        </div> -->
     </div>
 </nav>
 
@@ -27,7 +27,7 @@
             <p><span class="tags-bar "><i class="bi bi-tags"></i></span>Tag</p>
             <ul *ngFor="let i of removeDuplicatesArrayByName ,let ii  = index " style="display: flex; ">
                 <li >{{ii+1}}.</li>&nbsp;&nbsp;
-                <li (click)="tagSearchData(i)"> {{ i}}</li>
+                <li (click)="tagSearchData(i)"> {{i}}</li>
 
             </ul>
         </div>
@@ -36,17 +36,17 @@
         <div class="d-xxl-none d-xl-none d-lg-none d-md-none col-sm-12 d-sm-block d-block mt-2 smallSidebar">
             <div class="tagsPart ">
                 <div class="m-2" *ngFor="let i of removeDuplicatesArrayByName">
-                    <p class="">{{i}}</p>
+                    <p class="" (click)="tagSearchData(i)">{{i}}</p>
                 </div>
             </div>
         </div>
 
         <!-- ===================THIRED SLIDER LAPTOP VIEW=================== -->
         <div class="col-xxl-10 col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12 mainContainer heightCust">
-            <div class="row d-flex flex-column mt-4" (keyup.enter)="AddData()  ">
+            <div class="row d-flex flex-column mt-4" (keyup.enter)="updateAddBtn === false ? AddData() : EditData()">
                 <div
                     class="d-flex justify-content-xxl-center justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center justify-content-center">
-                    <input type="text" class="form-control tagInput" name="tag" placeholder="Enter Tag"
+                    <input type="text" class="form-control text-lowercase tagInput" name="tag" placeholder="Enter Tag"
                         [(ngModel)]="task.tag_name">
                     <input type="color" sd class="form-control colorInput fgC" [(ngModel)]="task.tag_fg_color">
                     <input type="color"   class="form-control colorInput bgC" [(ngModel)]="task.tag_bg_color">
