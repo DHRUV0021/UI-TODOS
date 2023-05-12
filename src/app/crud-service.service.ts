@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class CrudServiceService {
 
-constructor(private http:HttpClient) { }
+
+  
+constructor(public http:HttpClient) { }
 
 dbUrl = 'http://localhost:3000/todosData';//JSON URL
 

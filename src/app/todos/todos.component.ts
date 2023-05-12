@@ -17,7 +17,7 @@ export class TODOSComponent implements OnInit {
   removeDuplicatesArrayByName = new Array();
 
 
-  constructor(private Data: CrudServiceService, private toastr: ToastrService) { }
+  constructor(public Data: CrudServiceService, public toastr: ToastrService) { }
 
 
   ngOnInit(): void {

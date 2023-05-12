@@ -17,7 +17,7 @@
     {
       "task_name": "website design",
       "tag_name": "work",
-      "completed": true,
+      "completed": false,
       "id": 4
     },
     {
@@ -29,9 +29,9 @@
       "id": 5
     },
     {
-      "completed": false,
-      "tag_name": "work",
       "task_name": "search web Design",
+      "tag_name": "work",
+      "completed": true,
       "id": 6
     }
   ]
