@@ -2,12 +2,6 @@
   "todosData": [
     {
       "completed": false,
-      "tag_name": "work",
-      "task_name": "Bootstraped",
-      "id": 2
-    },
-    {
-      "completed": false,
       "tag_name": "parsonal",
       "tag_fg_color": "#000000",
       "tag_bg_color": "#e6b7b7",

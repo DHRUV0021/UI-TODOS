@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class TODOSComponent implements OnInit {
 
-  task!: TodosPermision
+  task!: TodosPermision;
   allData: Array<TodosPermision> = new Array<TodosPermision>();
   btnDone = false;
   updateAddBtn= false;

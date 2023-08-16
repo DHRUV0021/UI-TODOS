@@ -17,7 +17,7 @@ describe('AppComponent', () => {
         AppComponent,
         TODOSComponent
       ],
-      providers:[
+      providers: [
         HttpClient,
         ToastrService
       ]

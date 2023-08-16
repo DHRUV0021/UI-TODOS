@@ -12,7 +12,7 @@ describe('CrudServiceService', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientModule,
-        RouterTestingModule,
+        RouterTestingModule
       ],
       providers: [
         HttpClient
